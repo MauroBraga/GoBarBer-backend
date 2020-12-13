@@ -1,18 +1,3 @@
-
-
-# SOLID
-    . Sigle Responsability Principle
-    . Dependecy Invertion Principle
-
-
-
-
-lsof -i :3333
-
-* RF  -> Requisitos Funcionais
-* RNF -> Requisitos Não Funcionais
-* RN  -> Regras de Negócio
-
 # Recuperação de senha
     **RF**
         - O usuário deve poder recuperar sua senha informando o seu e-mail
@@ -65,3 +50,12 @@ lsof -i :3333
         - O usuário não pode agendar em um horário já ocupado;
         - O usuário não pode agendar em um horário que já passou;
         - O usuário não pode agenar serviços consigo mesmo;
+
+
+
+# Legendas
+lsof -i :3333
+
+* RF  -> Requisitos Funcionais
+* RNF -> Requisitos Não Funcionais
+* RN  -> Regras de Negócio
