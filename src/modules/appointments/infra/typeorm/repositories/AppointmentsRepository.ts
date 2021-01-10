@@ -46,7 +46,7 @@ class AppointmentsRepository implements IAppointmentsRepository {
         provider_id,
         date: Raw(
           dataFieldName =>
-            `to_char(${dataFieldName}), 'MM-YYYY' = '${parseMonth}-${year}'`,
+            `to_char(${dataFieldName}, 'MM-YYYY') = '${parseMonth}-${year}'`,
         ),
       },
     });
@@ -59,15 +59,15 @@ class AppointmentsRepository implements IAppointmentsRepository {
     year,
     month,
   }: IFindAllInDayFromProviderDTO): Promise<Appointment[]> {
-    const parseMonth = String(month).padStart(2, '0');
     const parseDay = String(day).padStart(2, '0');
+    const parseMonth = String(month).padStart(2, '0');
 
     const appointments = await this.ormRepository.find({
       where: {
         provider_id,
         date: Raw(
           dataFieldName =>
-            `to_char(${dataFieldName}), 'DD-MM-YYYY' = '${parseDay}-${parseMonth}-${year}'`,
+            `to_char(${dataFieldName}, 'DD-MM-YYYY') = '${parseDay}-${parseMonth}-${year}'`,
         ),
       },
     });
