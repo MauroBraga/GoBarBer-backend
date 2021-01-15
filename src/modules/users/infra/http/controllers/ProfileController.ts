@@ -1,3 +1,4 @@
+import { classToClass } from 'class-transformer';
 import ShowProfileService from '@modules/users/services/ShowProfileService';
 import UpdateProfileService from '@modules/users/services/UpdateProfileService';
 import { Request, Response } from 'express';
@@ -11,15 +12,7 @@ export default class ProfileController {
 
     const user = await showProfile.execute({ user_id });
 
-    const userWithoutPassword = {
-      id: user.id,
-      name: user.name,
-      email: user.email,
-      created_at: user.created_at,
-      update_at: user.update_at,
-    };
-
-    return response.json(userWithoutPassword);
+    return response.json(classToClass(user));
   }
 
   public async update(request: Request, response: Response): Promise<Response> {
