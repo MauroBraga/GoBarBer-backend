@@ -3,7 +3,7 @@ import crypto from 'crypto';
 import multer, { StorageEngine } from 'multer';
 
 interface IUploadConfig {
-  driver: 'disk' | 's3';
+  driver: 'driver' | 's3';
 
   tmpFolder: string;
   uploadsFolder: string;
