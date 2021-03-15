@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "main": "index.js",
   "repository": "https://github.com/MauroBraga/primeiro-projeto-node.git",
-  "author": "MauroBraga <mrb0305@gmail.com>",
   "license": "MIT",
   "scripts": {
     "build": "tsc",
